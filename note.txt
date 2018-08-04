@@ -1,0 +1,16 @@
+0. Basic error_reporting==============================================================================
+Proses debugging dilakukan semasa aplikasi masih dalam tahap development. ketika sudah di production maka semua error harus dimatikan. bisa dengan setting $_ENV nya atau dari file php.ini nya.
+
+untuk mengaktifkan semua error dengan parameter E_ALL
+ini_set('display_errors','on');
+error_reporting(E_ALL);
+
+die dan var_dump bisa kita gunakan untuk mendeteksi variabel jika terjadi kesalahan dari logika.
+die akan memberhentikan script yang ada setelah nya, sementara var_dump() akan menampilkan isi detail dari sebuah variabel.
+
+die(var_dump());
+
+1. Bermain error log==============================================================================
+error_log => menampilkan error bukan pada browser langsung, tp pada sebuah file atau pada email. cocok ketika aplikasinya udah live (production).
+bisa juga digunakan utk analytics. mendeteksi aktivitas login misalnya.
+lihat dokumentasi error_log() di php.net utk melihat opsi nya.
